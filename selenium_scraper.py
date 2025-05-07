@@ -6,7 +6,7 @@ import time
 import Quotes_Scrapper
 
 # Set the path to your Edge WebDriver
-edge_driver_path = "C:\\Users\\NB437076\\OneDrive - Nedbank\\Documents\\Spani\\AWS Projects\\WebScrapper_AWS_DynamoDB\\driver\\msedgedriver.exe"
+edge_driver_path = "your/web/driver/path"
 
 # Initialize Edge WebDriver
 options = webdriver.EdgeOptions()
