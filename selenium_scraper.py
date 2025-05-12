@@ -3,10 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By 
 from datetime import datetime 
 import time
-import Quotes_Scrapper
+import boto3
+
+# import Quotes_Scrapper
 
 # Set the path to your Edge WebDriver
-edge_driver_path = "your/web/driver/path"
+edge_driver_path = "C:your/driver/path" # Yes you! who's reading this code;)
 
 # Initialize Edge WebDriver
 options = webdriver.EdgeOptions()
@@ -25,7 +27,9 @@ quotes_elements = driver.find_elements(By.CLASS_NAME, 'quote')
 
 
 # Initialize DynamoDB resource 
-table = Quotes_Scrapper.initialize_table('QuotesTable')
+# table = Quotes_Scrapper.initialize_table('QuotesTable')
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1') 
+table = dynamodb.Table("QuotesTable")
 
 # Extract and store data
 for quote_element in quotes_elements:
@@ -34,7 +38,7 @@ for quote_element in quotes_elements:
     tags = [tag.text for tag in quote_element.find_elements(By.CLASS_NAME, 'tag')]
 
     # Create a unique Quote ID
-    quote_id = str(hash())
+    quote_id = str(hash(text))
     # Save data to DynamoDB
     table.put_item(
         Item={
