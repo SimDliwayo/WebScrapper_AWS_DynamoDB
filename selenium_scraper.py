@@ -34,7 +34,7 @@ product_cards = driver.find_elements(By.CSS_SELECTOR, 'a[ui-card-product]')
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 table = dynamodb.Table("Avo_Water_Solution")  
 
-
+max_products = config['max_products'] ##### I'll use you issue I want you to be dynamic you know, maybe prompt the engineer ? 
 count = 0
 for card in product_cards:
     if count >= 3:
