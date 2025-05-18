@@ -1,0 +1,8 @@
+{
+  "driver_path_file": ".config/path.txt",
+  "target_url": "https://www.avo.africa/ecommerce/search/result-list?vertical=ESHOP&categoryId=WATER",
+  "dynamodb_region": "us-east-1",
+  "dynamodb_table": "Avo_Water_Solution",
+  "max_products": 10,
+  "sleep_time": 5
+}
