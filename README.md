@@ -28,9 +28,10 @@ Edit `.config/config.json`:
   "sleep_time": 3,
   "max_products": 10
 }
-
+```
 ---
 
-## How to Run
+## How to Run ⚙️
 
+- Run `python selenuim_scrapper.py`
 
